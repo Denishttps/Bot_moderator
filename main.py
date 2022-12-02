@@ -69,7 +69,7 @@ async def uinfocmd(msg: types.Message):
   member = await bot.get_chat_member(msg.chat.id, msg.reply_to_message.from_user.id)
   admin = await bot.get_chat_member(msg.chat.id, msg.from_user.id)
   if msg.chat.type != 'private':
-    await msg.reply(f'<b>{member.user}\n\n\n{member.status}</b>')
+    await msg.reply(f'<b>Имя: <b>{member.user.first_name}</b>\n<b>Имя пользователя:</b> @{member.user.username}\n<b>ID:</b> <code>{member.user.id}</code>\n<b>Статус в группе:</b> {member.status}</b>')
   else:
     await msg.reply(f'<b>Команда </b><code>test</code> <b>не работает в приватных чатах</b>')
 
